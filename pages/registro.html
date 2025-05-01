@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remédios Naturais</title>
+  <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+
+<body>
+
+  <!-- Título Principal -->
+  <h1 class="main-title">Remédios Naturais</h1>
+
+  <!-- Seção de Cadastro -->
+  <section class="login-section">
+    <div class="login-container">
+      <form class="login-form" id="formCadastro">
+        <h2>Crie sua conta</h2>
+
+        <div class="input-group">
+          <label for="nome">Nome completo:</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+        </div>
+        
+        <div class="input-group">
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+        </div>
+
+        <div class="login-button">
+          <button type="submit">Criar Conta</button>
+        </div>
+
+        <div class="login-links">
+          <a href="login.html">Já tem uma conta? Faça login</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Sistema Remédios Naturais. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Redireciona para o login após criar a conta
+    document.getElementById("formCadastro").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Conta criada com sucesso!");
+      window.location.href = "login.html";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Diário - Remédios Naturais</title>
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/crud.css">
+</head>
+<body>
+
+  <!-- Menu de Navegação (igual ao metas.html) -->
+  <nav class="navbar">
+    <div class="navbar-brand">Remédios Naturais</div>
+    <ul class="navbar-menu">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="metas.html">Metas</a></li>
+      <li><a href="monitoramento.html">Monitoramento</a></li>
+      <li><a href="graficos.html">Gráficos</a></li>
+      <li><a href="recomendacoes.html">Recomendações</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo Principal - Estilo igual ao metas.html -->
+  <div class="container">
+    <h1>Seu Progresso Diário</h1>
+    
+    <div class="date-selector">
+      <button id="prev-day">&lt;</button>
+      <span id="current-date">20 de Novembro de 2023</span>
+      <button id="next-day">&gt;</button>
+    </div>
+
+    <form id="dailyForm">
+      <!-- Água -->
+      <label>Quantos litros de água você consumiu hoje?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="agua" value="0">0L</label>
+          <label><input type="radio" name="agua" value="1">1L</label>
+          <label><input type="radio" name="agua" value="1.5">1,5L</label>
+          <label><input type="radio" name="agua" value="2" checked>2L</label>
+          <label><input type="radio" name="agua" value="2.5">2,5L</label>
+          <label><input type="radio" name="agua" value="3">3L</label>
+          <label><input type="radio" name="agua" value="3+">+3L</label>
+        </div>
+      </div>
+
+      <!-- Alimentação -->
+      <label>Como você avalia sua alimentação hoje? (1-10)</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="alimentacao" value="1">1</label>
+          <label><input type="radio" name="alimentacao" value="2">2</label>
+          <label><input type="radio" name="alimentacao" value="3">3</label>
+          <label><input type="radio" name="alimentacao" value="4">4</label>
+          <label><input type="radio" name="alimentacao" value="5">5</label>
+          <label><input type="radio" name="alimentacao" value="6" checked>6</label>
+          <label><input type="radio" name="alimentacao" value="7">7</label>
+          <label><input type="radio" name="alimentacao" value="8">8</label>
+          <label><input type="radio" name="alimentacao" value="9">9</label>
+          <label><input type="radio" name="alimentacao" value="10">10</label>
+        </div>
+      </div>
+
+      <!-- Ar Puro -->
+      <label>Quanto tempo passou ao ar livre hoje?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="ar" value="0">Não saí</label>
+          <label><input type="radio" name="ar" value="15">15min</label>
+          <label><input type="radio" name="ar" value="30" checked>30min</label>
+          <label><input type="radio" name="ar" value="45">45min</label>
+          <label><input type="radio" name="ar" value="60">1h</label>
+        </div>
+      </div>
+
+      <!-- Luz Solar -->
+      <label>Quanto tempo de exposição ao sol teve hoje?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="sol" value="0">Nenhum</label>
+          <label><input type="radio" name="sol" value="15">15min</label>
+          <label><input type="radio" name="sol" value="30" checked>30min</label>
+          <label><input type="radio" name="sol" value="45">45min</label>
+        </div>
+      </div>
+
+      <!-- Exercício -->
+      <label>Quanto tempo dedicou a exercícios hoje?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="exercicio" value="0">Nenhum</label>
+          <label><input type="radio" name="exercicio" value="15">15min</label>
+          <label><input type="radio" name="exercicio" value="30" checked>30min</label>
+          <label><input type="radio" name="exercicio" value="45">45min</label>
+        </div>
+      </div>
+
+      <!-- Temperança -->
+      <label>Como foi seu autocontrole hoje? (1-10)</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="temperanca" value="1">1</label>
+          <label><input type="radio" name="temperanca" value="2">2</label>
+          <label><input type="radio" name="temperanca" value="3">3</label>
+          <label><input type="radio" name="temperanca" value="4">4</label>
+          <label><input type="radio" name="temperanca" value="5">5</label>
+          <label><input type="radio" name="temperanca" value="6">6</label>
+          <label><input type="radio" name="temperanca" value="7" checked>7</label>
+          <label><input type="radio" name="temperanca" value="8">8</label>
+          <label><input type="radio" name="temperanca" value="9">9</label>
+          <label><input type="radio" name="temperanca" value="10">10</label>
+        </div>
+      </div>
+
+      <!-- Descanso -->
+      <label>Quantas horas dormiu na noite passada?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="sono" value="4">-5h</label>
+          <label><input type="radio" name="sono" value="5">5h</label>
+          <label><input type="radio" name="sono" value="6" checked>6h</label>
+          <label><input type="radio" name="sono" value="7">7h</label>
+          <label><input type="radio" name="sono" value="8">8h</label>
+        </div>
+      </div>
+
+      <!-- Equilíbrio Emocional -->
+      <label>Como está seu bem-estar emocional hoje? (1-10)</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="emocional" value="1">1</label>
+          <label><input type="radio" name="emocional" value="2">2</label>
+          <label><input type="radio" name="emocional" value="3">3</label>
+          <label><input type="radio" name="emocional" value="4">4</label>
+          <label><input type="radio" name="emocional" value="5">5</label>
+          <label><input type="radio" name="emocional" value="6">6</label>
+          <label><input type="radio" name="emocional" value="7" checked>7</label>
+          <label><input type="radio" name="emocional" value="8">8</label>
+          <label><input type="radio" name="emocional" value="9">9</label>
+          <label><input type="radio" name="emocional" value="10">10</label>
+        </div>
+      </div>
+
+      <div class="recommendation-box">
+        <p><strong>Recomendação:</strong> Tome 20 minutos de sol pela manhã para melhorar sua vitamina D!</p>
+      </div>
+
+      <button type="submit">Salvar Progresso</button>
+    </form>
+  </div>
+
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+/* Container principal */
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.07);
+}
+
+/* Título e mensagem de boas-vindas */
+.container h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #1d4e89;
+  margin-bottom: 10px;
+}
+
+.welcome {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Formulário */
+form label:not(.radio-options label) {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1d4e89;
+}
+
+/* Estilo para os grupos de radio buttons */
+.radio-group {
+  margin-bottom: 25px;
+  background-color: #f8fcff;
+  border: 1px solid #bcdff1;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.radio-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.radio-options label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-size: 13px;
+  color: #555;
+  font-weight: 500;
+  padding: 8px 5px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 50px;
+  text-align: center;
+}
+
+.radio-options label:hover {
+  background-color: #e6f3fb;
+}
+
+.radio-options input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #bcdff1;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.radio-options input[type="radio"]:checked {
+  background-color: #1d4e89;
+  border-color: #1d4e89;
+}
+
+.radio-options input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-options input[type="radio"]:checked + span {
+  color: #1d4e89;
+  font-weight: bold;
+}
+
+/* Botão */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #1d4e89;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #14507b;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .radio-options {
+    gap: 5px;
+  }
+  
+  .radio-options label {
+    font-size: 12px;
+    padding: 6px 2px;
+    min-width: 40px;
+  }
+}

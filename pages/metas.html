@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Definir Metas - Remédios Naturais</title>
+  <link rel="stylesheet" href="../assets/css/metas.css">
+  <link rel="stylesheet" href="../assets/css/crud.css">
+</head>
+<body>
+
+ <!-- Menu de Navegação (igual ao metas.html) -->
+ <nav class="navbar">
+  <div class="navbar-brand">Remédios Naturais</div>
+  <ul class="navbar-menu">
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="metas.html">Metas</a></li>
+    <li><a href="monitoramento.html">Monitoramento</a></li>
+    <li><a href="graficos.html">Gráficos</a></li>
+    <li><a href="recomendacoes.html">Recomendações</a></li>
+    <li><a href="#">Logout</a></li>
+  </ul>
+</nav>
+  <!-- Conteúdo Principal -->
+  <div class="container">
+    <h1>Suas Metas de Saúde</h1>
+    <p class="welcome">Bem-vindo, <strong id="username">[Nome do Usuário]</strong>! Preencha suas metas para hoje:</p>
+  
+    <form id="metasForm">
+      <!-- Água -->
+      <label>Quanta água você deseja consumir por dia?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="agua" value="1L">1L</label>
+          <label><input type="radio" name="agua" value="1.5L">1,5L</label>
+          <label><input type="radio" name="agua" value="2L" checked>2L</label>
+          <label><input type="radio" name="agua" value="2.5L">2,5L</label>
+          <label><input type="radio" name="agua" value="3L" >3L</label>
+          <label><input type="radio" name="agua" value="3+L">+3L</label>
+        </div>
+      </div>
+
+      <!-- Alimentação -->
+      <label>Quanto você deseja equilibrar sua alimentação?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="alimentacao" value="1">1</label>
+          <label><input type="radio" name="alimentacao" value="2">2</label>
+          <label><input type="radio" name="alimentacao" value="3">3</label>
+          <label><input type="radio" name="alimentacao" value="4">4</label>
+          <label><input type="radio" name="alimentacao" value="5" checked>5</label>
+          <label><input type="radio" name="alimentacao" value="6">6</label>
+          <label><input type="radio" name="alimentacao" value="7">7</label>
+          <label><input type="radio" name="alimentacao" value="8">8</label>
+          <label><input type="radio" name="alimentacao" value="9">9</label>
+          <label><input type="radio" name="alimentacao" value="10">10</label>
+        </div>
+      </div>
+
+      <!-- Luz Solar -->
+      <label>Quanto tempo você deseja passar tomando sol?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="luz" value="nenhum">Sem exposição</label>
+          <label><input type="radio" name="luz" value="15min">Até 15min</label>
+          <label><input type="radio" name="luz" value="15-30min">15–30min</label>
+          <label><input type="radio" name="luz" value="30-60min" checked>30–60min</label>
+          <label><input type="radio" name="luz" value="1h+">+1h</label>
+        </div>
+      </div>
+
+      <!-- Temperança -->
+      <label>Quanto você gostaria de atingir de autocontrole?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="temperanca" value="1">1</label>
+          <label><input type="radio" name="temperanca" value="2">2</label>
+          <label><input type="radio" name="temperanca" value="3">3</label>
+          <label><input type="radio" name="temperanca" value="4">4</label>
+          <label><input type="radio" name="temperanca" value="5" checked>5</label>
+          <label><input type="radio" name="temperanca" value="6">6</label>
+          <label><input type="radio" name="temperanca" value="7">7</label>
+          <label><input type="radio" name="temperanca" value="8">8</label>
+          <label><input type="radio" name="temperanca" value="9">9</label>
+          <label><input type="radio" name="temperanca" value="10">10</label>
+        </div>
+      </div>
+
+      <!-- Ar Livre -->
+      <label>Quanto tempo você gostaria de passar ao ar livre?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="ar" value="nao-saiu">Não saí</label>
+          <label><input type="radio" name="ar" value="15min">15min</label>
+          <label><input type="radio" name="ar" value="30min" checked>30min</label>
+          <label><input type="radio" name="ar" value="1h">1h</label>
+          <label><input type="radio" name="ar" value="1h+">+1h</label>
+        </div>
+      </div>
+
+      <!-- Sono -->
+      <label>Quanto tempo você espera dormir por noite?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="sono" value="-5h">-5h</label>
+          <label><input type="radio" name="sono" value="5-6h">5–6h</label>
+          <label><input type="radio" name="sono" value="6-7h" checked>6–7h</label>
+          <label><input type="radio" name="sono" value="7-8h">7–8h</label>
+          <label><input type="radio" name="sono" value="8+h">+8h</label>
+        </div>
+      </div>
+
+      <!-- Exercício -->
+      <label>Quanto tempo você deseja dedicar a exercícios físicos?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="exercicio" value="nenhum">Nenhum</label>
+          <label><input type="radio" name="exercicio" value="15min">15min</label>
+          <label><input type="radio" name="exercicio" value="30min" checked>30min</label>
+          <label><input type="radio" name="exercicio" value="45min">45min</label>
+          <label><input type="radio" name="exercicio" value="1h+">1h+</label>
+        </div>
+      </div>
+
+      <!-- Equilíbrio Emocional -->
+      <label>Qual é o seu nível de equilíbrio emocional?</label>
+      <div class="radio-group">
+        <div class="radio-options">
+          <label><input type="radio" name="fe" value="1">1</label>
+          <label><input type="radio" name="fe" value="2">2</label>
+          <label><input type="radio" name="fe" value="3">3</label>
+          <label><input type="radio" name="fe" value="4">4</label>
+          <label><input type="radio" name="fe" value="5" checked>5</label>
+          <label><input type="radio" name="fe" value="6">6</label>
+          <label><input type="radio" name="fe" value="7">7</label>
+          <label><input type="radio" name="fe" value="8">8</label>
+          <label><input type="radio" name="fe" value="9">9</label>
+          <label><input type="radio" name="fe" value="10">10</label>
+        </div>
+      </div>
+
+      <button type="submit">Salvar Metas</button>
+    </form>
+  </div>
+  <script src="assets/js/metas.js"></script>
+</body>
+</html>
