@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recomendações - Remédios Naturais</title>
+  <link rel="stylesheet" href="../assets/css/recomendacoes.css">
+  <link rel="stylesheet" href="../assets/css/crud.css">
+
+</head>
+<body>
+
+   <!-- Menu de Navegação (igual ao metas.html) -->
+   <nav class="navbar">
+    <div class="navbar-brand">Remédios Naturais</div>
+    <ul class="navbar-menu">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="metas.html">Metas</a></li>
+      <li><a href="monitoramento.html">Monitoramento</a></li>
+      <li><a href="analise.html">Análise</a></li>
+      <li><a href="recomendacoes.html">Recomendações</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <div class="container">
+    <h1>Recomendações Personalizadas</h1>
+    
+    <div class="tip-box">
+      <div class="tip-icon">💡</div>
+      <div>
+        <strong>Dica:</strong> Com base no seu histórico, recomendamos que você foque na hidratação e exposição ao sol pela manhã.
+      </div>
+    </div>
+    
+    <div class="categoria-filtro">
+      <button class="filtro-btn active">Todos</button>
+      <button class="filtro-btn">Água</button>
+      <button class="filtro-btn">Alimentação</button>
+      <button class="filtro-btn">Ar Puro</button>
+      <button class="filtro-btn">Luz Solar</button>
+      <button class="filtro-btn">Exercício</button>
+      <button class="filtro-btn">Temperança</button>
+      <button class="filtro-btn">Descanso</button>
+      <button class="filtro-btn">Equilíbrio</button>
+    </div>
+    
+    <div class="remedios-grid">
+      <!-- Card Água -->
+      <div class="remedio-card">
+        <h3>Água</h3>
+        <p>Aumente seu consumo de água para 2,5L diariamente. O ideal é dividir em 8 copos ao longo do dia.</p>
+        <div class="progress-section">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 65%"></div>
+          </div>
+          <span class="progress-text">65%</span>
+        </div>
+      </div>
+      
+      <!-- Card Luz Solar -->
+      <div class="remedio-card">
+        <h3>Luz Solar</h3>
+        <p>Você está abaixo da meta de exposição solar. Recomendamos 30 minutos de sol da manhã entre 8h e 10h.</p>
+        <div class="progress-section">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 40%"></div>
+          </div>
+          <span class="progress-text">40%</span>
+        </div>
+      </div>
+      
+      <!-- Card Exercício -->
+      <div class="remedio-card">
+        <h3>Exercício</h3>
+        <p>Continue com suas caminhadas de 30 minutos. Considere adicionar 2 dias de exercícios de força por semana.</p>
+        <div class="progress-section">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 75%"></div>
+          </div>
+          <span class="progress-text">75%</span>
+        </div>
+      </div>
+      
+      <!-- Card Descanso -->
+      <div class="remedio-card">
+        <h3>Descanso</h3>
+        <p>Seu sono está irregular. Tente dormir e acordar nos mesmos horários, visando 7-8 horas de sono.</p>
+        <div class="progress-section">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 55%"></div>
+          </div>
+          <span class="progress-text">55%</span>
+        </div>
+      </div>
+      
+      <!-- Card Alimentação -->
+      <div class="remedio-card">
+        <h3>Alimentação</h3>
+        <p>Aumente o consumo de vegetais e frutas. Recomendamos 5 porções de frutas e vegetais por dia.</p>
+        <div class="progress-section">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 60%"></div>
+          </div>
+          <span class="progress-text">60%</span>
+        </div>
+      </div>
+      
+      <!-- Card Ar Puro -->
+      <div class="remedio-card">
+        <h3>Ar Puro</h3>
+        <p>Você está progredindo bem! Continue com as atividades ao ar livre e mantenha janelas abertas quando possível.</p>
+        <div class="progress-section">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 85%"></div>
+          </div>
+          <span class="progress-text">85%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Script simples para funcionalidade dos filtros
+    document.querySelectorAll('.filtro-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.filtro-btn').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        // Aqui você adicionaria lógica de filtro real
+      });
+    });
+  </script>
+</body>
+</html>

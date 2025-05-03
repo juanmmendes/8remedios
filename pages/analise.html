@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise de Saúde - Remédios Naturais</title>
+  <link rel="stylesheet" href="../assets/css/analise.css">
+  <link rel="stylesheet" href="../assets/css/crud.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+  <!-- Menu de Navegação -->
+  <nav class="navbar">
+    <div class="navbar-brand">Remédios Naturais</div>
+    <ul class="navbar-menu">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="metas.html">Metas</a></li>
+      <li><a href="monitoramento.html">Monitoramento</a></li>
+      <li><a href="analise.html">Análise</a></li>
+      <li><a href="recomendacoes.html">Recomendações</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <div class="container">
+    <h1>Análise e Tendências de Saúde</h1>
+    
+    <!-- Painel de Insights -->
+    <div class="insight-panel">
+      <div class="insight-header">
+        <div class="insight-title">Seu Insight Principal</div>
+        <button class="insight-action">Ver Recomendações</button>
+      </div>
+      <div class="insight-content">
+        <div class="insight-message">
+          <p>Sua média de consumo de água melhorou <span class="highlight">15%</span> nas últimas 4 semanas, mas nos dias de exercício intenso, você ainda está <span class="highlight">20% abaixo</span> da quantidade recomendada.</p>
+          <p style="margin-top: 10px;">Aumentar a hidratação nos dias de exercício pode melhorar significativamente seu desempenho e recuperação muscular.</p>
+        </div>
+        <div class="insight-chart">
+          <canvas id="insightChart"></canvas>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Resumo dos Indicadores -->
+    <div class="dashboard-summary">
+      <div class="summary-card" data-category="agua">
+        <div class="summary-title">Água</div>
+        <div class="summary-value">70%</div>
+        <div class="summary-change positive-change">+15%</div>
+      </div>
+      <div class="summary-card" data-category="alimentacao">
+        <div class="summary-title">Alimentação</div>
+        <div class="summary-value">65%</div>
+        <div class="summary-change positive-change">+8%</div>
+      </div>
+      <div class="summary-card" data-category="exercicio">
+        <div class="summary-title">Exercício</div>
+        <div class="summary-value">55%</div>
+        <div class="summary-change negative-change">-3%</div>
+      </div>
+      <div class="summary-card" data-category="descanso">
+        <div class="summary-title">Descanso</div>
+        <div class="summary-value">60%</div>
+        <div class="summary-change positive-change">+12%</div>
+      </div>
+      <div class="summary-card" data-category="ar">
+        <div class="summary-title">Ar Puro</div>
+        <div class="summary-value">75%</div>
+        <div class="summary-change neutral-change">0%</div>
+      </div>
+      <div class="summary-card" data-category="sol">
+        <div class="summary-title">Luz Solar</div>
+        <div class="summary-value">42%</div>
+        <div class="summary-change negative-change">-5%</div>
+      </div>
+      <div class="summary-card" data-category="temperanca">
+        <div class="summary-title">Temperança</div>
+        <div class="summary-value">80%</div>
+        <div class="summary-change positive-change">+10%</div>
+      </div>
+      <div class="summary-card" data-category="emocional">
+        <div class="summary-title">Emocional</div>
+        <div class="summary-value">68%</div>
+        <div class="summary-change positive-change">+7%</div>
+      </div>
+    </div>
+    
+    <!-- Controles de Filtro -->
+    <div class="filter-controls">
+      <div class="date-filter">
+        <label for="period-select">Período:</label>
+        <select id="period-select">
+          <option value="7">Últimos 7 dias</option>
+          <option value="30" selected>Últimos 30 dias</option>
+          <option value="90">Últimos 3 meses</option>
+          <option value="180">Últimos 6 meses</option>
+          <option value="365">Último ano</option>
+        </select>
+      </div>
+      <div class="view-toggle">
+        <button class="active" data-view="overview">Visão Geral</button>
+        <button data-view="detailed">Detalhado</button>
+        <button data-view="comparative">Comparativo</button>
+      </div>
+    </div>
+    
+    <!-- Gráfico de Progresso -->
+    <div class="chart-container">
+      <h3 class="chart-title">Progresso dos 8 Remédios Naturais</h3>
+      <!-- <div class="chart-filters">
+        <label class="filter-checkbox">
+          <input type="checkbox" checked data-filter="agua"> 
+          <span class="filter-label">Água</span>
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" checked data-filter="alimentacao"> 
+          <span class="filter-label">Alimentação</span>
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" checked data-filter="ar"> 
+          <span class="filter-label">Ar Puro</span>
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" checked data-filter="sol"> 
+          <span class="filter-label">Luz Solar</span>
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" checked data-filter="exercicio"> 
+          <span class="filter-label">Exercício</span>
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" checked data-filter="temperanca"> 
+          <span class="filter-label">Temperança</span>
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" checked data-filter="descanso"> 
+          <span class="filter-label">Descanso</span>
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" checked data-filter="emocional"> 
+          <span class="filter-label">Emocional</span>
+        </label>
+      </div> -->
+      <div class="chart-wrapper">
+        <canvas id="progressChart"></canvas>
+      </div>
+      <div class="chart-info">
+        <strong>Análise:</strong> Você está mantendo bom progresso em 6 dos 8 remédios naturais. Áreas que precisam de mais atenção são Exercício e Luz Solar.
+      </div>
+    </div>
+    
+    <!-- Tendência de Água -->
+    <div class="chart-container">
+      <h3 class="chart-title">Tendência de Consumo de Água</h3>
+      <div class="chart-wrapper">
+        <canvas id="waterTrend"></canvas>
+      </div>
+      <div class="chart-info">
+        <strong>Dica:</strong> Nos dias 10, 17 e 24 você teve maior consumo de água, coincidindo com seus dias de atividade física. Continue com essa associação positiva!
+      </div>
+    </div>
+    
+    <!-- Correlação -->
+    <div class="chart-container">
+      <h3 class="chart-title">Como seus hábitos se correlacionam</h3>
+      <div class="chart-wrapper">
+        <canvas id="correlationChart"></canvas>
+      </div>
+      <div class="chart-info">
+        <strong>Insight:</strong> Dias com mais exercício mostram melhora na qualidade do sono em até 45%. Considere adicionar mais atividade física para melhorar seu descanso.
+      </div>
+    </div>
+    
+    <!-- Recomendações Personalizadas -->
+    <div class="recommendation-panel">
+      <div class="recommendation-title">
+        <span>Recomendações Personalizadas</span>
+      </div>
+      <ul class="recommendation-list">
+        <li class="recommendation-item">
+          <div class="recommendation-icon">💧</div>
+          <div class="recommendation-content">
+            <div class="recommendation-text">
+              Aumente sua ingestão de água em 500ml nos dias de exercício intenso.
+            </div>
+            <div class="recommendation-meta">
+              <span>Impacto estimado: Alto</span>
+              <span>Facilidade: Média</span>
+            </div>
+            <div class="recommendation-actions">
+              <button class="btn">Adicionar como Meta</button>
+              <button class="btn btn-outline">Detalhes</button>
+            </div>
+          </div>
+        </li>
+        <li class="recommendation-item">
+          <div class="recommendation-icon">🌞</div>
+          <div class="recommendation-content">
+            <div class="recommendation-text">
+              Tente expor-se à luz solar por 15 minutos pela manhã, entre 7h e 9h.
+            </div>
+            <div class="recommendation-meta">
+              <span>Impacto estimado: Médio</span>
+              <span>Facilidade: Alta</span>
+            </div>
+            <div class="recommendation-actions">
+              <button class="btn">Adicionar como Meta</button>
+              <button class="btn btn-outline">Detalhes</button>
+            </div>
+          </div>
+        </li>
+        <li class="recommendation-item">
+          <div class="recommendation-icon">🏃</div>
+          <div class="recommendation-content">
+            <div class="recommendation-text">
+              Adicione 2 sessões semanais de exercícios de curta duração (15-20 min).
+            </div>
+            <div class="recommendation-meta">
+              <span>Impacto estimado: Alto</span>
+              <span>Facilidade: Média</span>
+            </div>
+            <div class="recommendation-actions">
+              <button class="btn">Adicionar como Meta</button>
+              <button class="btn btn-outline">Detalhes</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Metas em Andamento -->
+    <div class="goal-progress">
+      <h3 class="chart-title">Progresso das Metas Atuais</h3>
+      
+      <div class="goal-item">
+        <div class="goal-header">
+          <div class="goal-name">Beber 2L de água por dia</div>
+          <div class="goal-target">70% concluído (21/30 dias)</div>
+        </div>
+        <div class="goal-bar">
+          <div class="goal-fill" style="width: 70%"></div>
+        </div>
+      </div>
+      
+      <div class="goal-item">
+        <div class="goal-header">
+          <div class="goal-name">Caminhar 30 minutos 3x por semana</div>
+          <div class="goal-target">58% concluído (7/12 sessões)</div>
+        </div>
+        <div class="goal-bar">
+          <div class="goal-fill" style="width: 58%"></div>
+        </div>
+      </div>
+      
+      <div class="goal-item">
+        <div class="goal-header">
+          <div class="goal-name">Dormir 7-8 horas por noite</div>
+          <div class="goal-target">83% concluído (25/30 dias)</div>
+        </div>
+        <div class="goal-bar">
+          <div class="goal-fill" style="width: 83%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<script src="../assets/js/charts.js"></script>
+</body>
+</html>
