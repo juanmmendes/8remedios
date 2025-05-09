@@ -1,15 +1,26 @@
 /* Reset básico */
-* {
+html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Variáveis globais */
+:root {
+  --primary-color: #0077cc;
+  --secondary-color: #d9efff;
+  --text-color: #333;
+  --background-light: #f9f9fc;
+  --background-dark: #e8f4ff;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition-duration: 0.3s;
+}
+
 /* Configurações gerais do corpo */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9fc;
-  color: #333;
+  font-family: var(--font-family);
+  background-color: var(--background-light);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
@@ -28,7 +39,7 @@ body {
 
 .hero-title {
   font-size: 3rem;
-  color: #005f9e;
+  color: var(--primary-color);
   margin-bottom: 20px;
   animation: fadeInDown 1s ease-in-out;
 }
@@ -36,19 +47,19 @@ body {
 .hero-subtitle {
   font-size: 1.3rem;
   margin-bottom: 30px;
-  color: #333;
+  color: var(--text-color);
 }
 
 .cta-button {
-  background-color: #0077cc;
+  background-color: var(--primary-color);
   color: #fff;
   padding: 12px 28px;
   font-size: 1rem;
   border: none;
   border-radius: 25px;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin: 20px; /* Margem em todos os lados do botão */
+  transition: background-color var(--transition-duration) ease-in-out, transform var(--transition-duration) ease-in-out;
+  margin: 20px;
 }
 
 .cta-button:hover {
@@ -59,7 +70,7 @@ body {
 .hero-image img {
   width: 100%;
   max-width: 500px;
-  margin: 15px; /* Margem em todos os lados da imagem */
+  margin: 15px;
 }
 
 /* Seções alternadas */
@@ -76,7 +87,7 @@ body {
 }
 
 .section-dark {
-  background-color: #e8f4ff;
+  background-color: var(--background-dark);
 }
 
 .section-content {
@@ -104,7 +115,7 @@ body {
 
 .section-text h2 {
   font-size: 2rem;
-  color: #0077cc;
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 
@@ -133,7 +144,7 @@ body {
 /* Call to Action */
 .cta-section {
   text-align: center;
-  background-color: #d9efff;
+  background-color: var(--secondary-color);
   padding: 80px 10%;
 }
 
@@ -167,7 +178,7 @@ body {
 }
 
 .footer-links a {
-  color: #0077cc;
+  color: var(--primary-color);
   margin: 0 10px;
   text-decoration: none;
 }
@@ -177,10 +188,10 @@ body {
 }
 
 /* Animações */
-@keyframes fadeInDown {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(var(--translate-distance, 20px));
   }
   to {
     opacity: 1;
@@ -188,7 +199,6 @@ body {
   }
 }
 
-/* Fade inicial */
 .fade-in-start {
   opacity: 0;
   transform: translateY(20px);
@@ -200,7 +210,6 @@ body {
   transform: translateY(0);
 }
 
-/* Reveal ao rolar */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -214,8 +223,7 @@ body {
 
 /* Configurações */
 .config-container {
-  border: #0077cc solid 2px;
-  height: auto;
+  border: var(--primary-color) solid 2px;
   width: 50%;
   border-radius: 20px;
   padding: 20px;
@@ -230,7 +238,7 @@ body {
 }
 
 .config-h3 {
-  color: #0077cc;
+  color: var(--primary-color);
   margin: 0 0 15px 0;
   text-align: center;
 }
@@ -285,7 +293,6 @@ body {
   .cta-button {
     padding: 10px 20px;
     font-size: 0.95rem;
-     margin: 15px; /* Margem em todos os lados da imagem */
   }
 
   .section-content {
@@ -304,12 +311,11 @@ body {
   .section-image img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 20px; /* Adicionando margem inferior na imagem */
+    margin-bottom: 20px;
   }
 
   .config-container {
     width: 90%;
-    height: auto;
     padding: 20px 10px;
   }
 
@@ -332,7 +338,6 @@ body {
   .cta-button {
     padding: 10px 18px;
     font-size: 0.9rem;
-    margin: 20px; /* Margem em todos os lados do botão */
   }
 
   .cta-section h2 {
