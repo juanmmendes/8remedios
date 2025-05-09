@@ -285,7 +285,7 @@ body {
   .cta-button {
     padding: 10px 20px;
     font-size: 0.95rem;
-    margin-top: 20px; /* Adicionando margem superior no botão */
+     margin: 15px; /* Margem em todos os lados da imagem */
   }
 
   .section-content {
