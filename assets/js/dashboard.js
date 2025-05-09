@@ -59,3 +59,4 @@ document.addEventListener('DOMContentLoaded', function() {
     updateDateDisplay();
     loadDailyData(currentDate); // Carrega os dados do dia atual
 });
+

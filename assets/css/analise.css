@@ -428,14 +428,7 @@
     }
     
     @media screen and (max-width: 768px) {
-      .navbar {
-        padding: 0.5rem 1rem;
-      }
-      
-      .navbar-menu {
-        display: none;
-      }
-      
+     
       .insight-content {
         flex-direction: column;
       }
@@ -449,3 +442,69 @@
         align-items: stretch;
       }
     }
+    @media (max-width: 768px) {
+     
+    
+      .insight-content {
+        flex-direction: column;
+      }
+    
+      .insight-message,
+      .insight-chart {
+        min-width: 100%;
+      }
+    
+      .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    
+      .view-toggle {
+        width: 100%;
+        justify-content: space-around;
+      }
+    
+      .chart-filters {
+        justify-content: space-between;
+        gap: 0.3rem;
+      }
+    
+      .chart-wrapper {
+        height: 250px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+    
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+    
+      .summary-value {
+        font-size: 1.4rem;
+      }
+    
+      .insight-title,
+      .chart-title {
+        font-size: 1rem;
+      }
+    
+      .insight-action {
+        width: 100%;
+        text-align: center;
+      }
+    
+      .date-filter {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+    
+      .date-filter select {
+        width: 100%;
+      }
+    }
+    
