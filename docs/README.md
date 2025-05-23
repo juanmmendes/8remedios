@@ -3,8 +3,10 @@
 Este é um sistema web desenvolvido com **HTML, CSS, JavaScript, PHP e MySQL/PostgreSQL**, focado no **monitoramento diário dos 8 remédios da natureza**. Seu objetivo é ajudar os usuários a manter hábitos saudáveis por meio de registros, gráficos e alertas personalizados.
 
 
-🔧 Status do Projeto: Em desenvolvimento
-Este sistema ainda não está completamente finalizado e continua sendo aprimorado com novas funcionalidades e melhorias na experiência do usuário.
+## 🔧 Status do Projeto
+
+Este projeto **ainda está em desenvolvimento** e continua sendo aprimorado com novas funcionalidades e melhorias de usabilidade.
+
 ---
 
 ## 🧩 Funcionalidades
